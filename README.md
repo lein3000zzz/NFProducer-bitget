@@ -1,25 +1,24 @@
 # nfproducer-bitget
 
-To install dependencies:
+A Bun-based TypeScript producer that polls news events from the Bitget exchange and publishes them to Apache Kafka using Protocol Buffers for serialization. 
+This repository is a direct implementation of the [bun template](https://github.com/lein3000zzz/NFProducer-template-bun)
 
-```bash
-bun install
-```
+### Related topics
 
-To run:
+1. [NewsFinder](https://github.com/lein3000zzz/NewsFinder) - The main Go-based consumer and analyzer.
 
-```bash
-bun run start
-```
+2. [News Producer Bitget Example](https://github.com/lein3000zzz/NFProducer-template-bun) - The template this project is based on.
 
-*or*
+3. [NewsAnalyzed Consumer Bun Template](https://github.com/lein3000zzz/NFConsumer-template-bun)
 
-```bash
-docker compose up
-```
+4. [The Telegram Bot](https://t.me/crypto_NewsFinderBot)
 
-To generate a new uuid for the source:
+### Features
 
-```bash
-bun run uuid
-```
+- Periodic news polling from Bitget REST endpoints
+- Kafka production with configurable brokers, topic, and client ID
+- Protobuf message serialization for efficient, typed messages
+- Configurable logging levels via Logtape
+- Utility for generating UUIDv7 source identifiers
+
+### You can find all the details in the [template README](https://github.com/lein3000zzz/NFProducer-template-bun)

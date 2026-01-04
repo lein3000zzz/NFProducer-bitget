@@ -8,6 +8,7 @@ class KafkaProducer {
     private readonly defaultTopic: string;
 
     constructor(kafkaSeeds: string[], kafkaClientID: string, defaultTopic: string) {
+        logger.info(`Initializing KafkaProducer with seeds: ${kafkaSeeds}, clientID: ${kafkaClientID}, defaultTopic: ${defaultTopic}`);
         const kafkaConfig: any = {
             clientId: kafkaClientID,
             brokers: kafkaSeeds
