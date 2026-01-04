@@ -10,10 +10,10 @@ if (!loggingLevel) {
 await logtape.configure({
     sinks: { console: logtape.getConsoleSink() },
     filters: {},
-    loggers: [{ category: ["LFBot"], lowestLevel: loggingLevel, sinks: ["console"] }],
+    loggers: [{ category: ["nf-producer"], lowestLevel: loggingLevel, sinks: ["console"] }],
 });
 
-const logger: logtape.Logger = logtape.getLogger(["LFBot"]);
+const logger: logtape.Logger = logtape.getLogger(["nf-producer"]);
 
 logger.info("Started logger");
 

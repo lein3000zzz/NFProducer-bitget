@@ -2,7 +2,6 @@ import logger from "../utils/logger.ts";
 import kp from "../producer/kafkaProducer.ts";
 import {type NewsEvent, NewsEventSchema} from "../entities/proto/news/news_pb.ts";
 import {create} from "@bufbuild/protobuf";
-const link = Bun.env.FETCH_LINK as string
 
 interface SingleNews {
     annId: bigint;
@@ -14,6 +13,7 @@ interface BitgetData {
     data: SingleNews[]
 }
 
+// this example is giga-omega-simplified so don't judge it harshly
 const sourceID = Bun.env.SOURCE_ID as string
 const fetchLink = Bun.env.FETCH_LINK as string;
 let lastAnnId: bigint = BigInt(0);

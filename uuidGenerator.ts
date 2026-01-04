@@ -1,4 +1,4 @@
-import logger from "./utils/logger.ts";
+import logger from "./src/utils/logger.ts";
 import { uuidv7 } from "uuidv7";
 
 function generateUUIDv7(): string {
