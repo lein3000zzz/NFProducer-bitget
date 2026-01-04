@@ -1,4 +1,4 @@
-# nfproducer-binance
+# nfproducer-bitget
 
 To install dependencies:
 
@@ -12,7 +12,13 @@ To run:
 bun run start
 ```
 
-To generate a uuid for the source:
+*or*
+
+```bash
+docker compose up
+```
+
+To generate a new uuid for the source:
 
 ```bash
 bun run uuid
