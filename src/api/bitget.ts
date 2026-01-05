@@ -13,6 +13,7 @@ interface BitgetData {
     data: SingleNews[]
 }
 
+// this example is giga-omega-simplified so don't judge it harshly
 const sourceID = Bun.env.SOURCE_ID as string;
 const baseFetchLink = Bun.env.FETCH_LINK as string;
 const annTypes = ["latest_news", "coin_listings", "product_updates", "security", "api_trading", "maintenance_system_updates", "symbol_delisting"];
@@ -50,7 +51,7 @@ export default async function pollNews() {
                 logger.info(`Processing announcement for ${annType}: ${news.annTitle} (ID: ${news.annId})`);
                 const event: NewsEvent = create(NewsEventSchema, {
                     sourceId: sourceID,
-                    title: "category " + annType.replace("_", " ") + ": ",
+                    title: "category " + annType.replaceAll("_", " ") + ": ",
                     content: news.annTitle,
                     publishedAt: news.cTime,
                 });
