@@ -50,7 +50,7 @@ export default async function pollNews() {
                 logger.info(`Processing announcement for ${annType}: ${news.annTitle} (ID: ${news.annId})`);
                 const event: NewsEvent = create(NewsEventSchema, {
                     sourceId: sourceID,
-                    title: "category" + annType,
+                    title: "category " + annType.replace("_", " ") + ": ",
                     content: news.annTitle,
                     publishedAt: news.cTime,
                 });
