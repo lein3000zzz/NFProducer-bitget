@@ -7,3 +7,4 @@ services:
       dockerfile: deployments/Dockerfile
     env_file:
       - .env
+    restart: always
